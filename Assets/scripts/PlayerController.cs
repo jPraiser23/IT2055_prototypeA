@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 20;
     public float steerSpeed = 20;
     public float shiftMultiplier = 2;
-    public float jumpSpeed = 0 ;
+    public float jumpSpeed = 5 ;
     public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         //Jump
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(new Vector3(0,5,0), ForceMode.Impulse);
+            rb.AddForce(new Vector3(0,jumpSpeed,0), ForceMode.Impulse);
         }
 
         Vector3 positionChange = Vector3.forward * gasValue;
